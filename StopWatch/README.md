@@ -54,3 +54,47 @@ document.getElementById('resetTimer').addEventListener('click', () => {
 - resetTimer 버튼을 누르면 타이머를 초기화하고, [milliseconds, seconds, minutes, hours]를 모두 0으로 설정하여 시간을 리셋합니다.
 ### 화면 업데이트
 - 초기화된 시간을 timerDisplay에 표시하여 화면에 "00 : 00 : 00 : 000"으로 업데이트합니다.
+
+4. **시작 버튼 이벤트***
+```
+document.getElementById('startTimer').addEventListener('click', () => {
+    if(timer != null){ 
+        clearInterval(timer);
+    }
+    timer = setInterval(displayTimer, 10);
+});
+```
+### 시작 버튼
+- startTimer 버튼을 누르면 setInterval을 통해 displayTimer 함수가 10밀리초마다 실행됩니다.
+### 중복 실행 방지
+- timer 변수가 null이 아닌 경우, clearInterval(timer)로 기존 타이머를 정지하여 중복 실행을 방지합니다.
+  
+5. **타이머 업데이트 함수 (displayTimer)**
+```
+function displayTimer(){
+    milliseconds += 10;
+    if(milliseconds == 1000){
+        milliseconds = 0;
+        seconds++;
+        if(seconds == 60){
+            seconds = 0;
+            minutes++;
+            if(minutes == 60){
+                minutes = 0;
+                hours++;
+            }
+        }
+    }
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+    let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
+    timerDisplay.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+}
+```
+### 시간 업데이트 로직
+- milliseconds가 1000 밀리초가 되면 1초가 증가하고, seconds가 60이 되면 1분이 증가합니다. 이 과정을 hours까지 반복하여 시간 정보를 업데이트합니다.
+### 두 자리 표시
+- 시간이 한 자리 숫자일 경우 앞에 0을 붙여 두 자리로 맞춥니다.
+### 화면 업데이트
+- timerDisplay의 innerHTML을 통해 타이머 화면을 실시간으로 업데이트합니다.
