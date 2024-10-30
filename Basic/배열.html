@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 Array</title>
+</head>
+<body>
+    <script>
+        let fruits = ["사과","오렌지","포도"];
+        let f2 = fruits;
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+        console.log(fruits.length);
+        //수정
+        fruits[0] = "배";
+        console.log(fruits[0]);
+
+        //상수로 배열 선언(새로운 배열로 바꿀수 없다.)
+        const myEggs = ['하나','둘','셋'];
+        myEggs.push("넷");
+        console.log(myEggs);
+
+        // myEggs = []; 새로운 배열 주소를 할당 불가
+        //반복문
+        for(i=0; i< myEggs.length; i++){
+            console.log(myEggs[i]);
+        }
+        for(const egg of myEggs){
+                console.log(egg);
+        }
+        myEggs.forEach(egg => console.log(egg));
+
+    </script>
+    
+</body>
+</html>

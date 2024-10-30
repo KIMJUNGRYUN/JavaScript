@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환</title>
+</head>
+<body>
+    <div id="myDiv">여기 글자를 바꿀거에요!</div>
+    <button onclick="changeText()">버튼 클릭</button>
+        
+    </div>
+    <script>
+       let element = document.getElementById("myDiv");
+       
+        function changeText(){
+            element.innerHTML = "이제 바뀌었어요";
+        }
+
+        let value = true; //불린
+        console.log(typeof value); //불린
+
+        value = String(value); //String() 문자열로 변환
+         console.log(typeof value);
+
+        console.log(typeof("6" / "2")); //문자열이 자동적으로 숫자로 바뀜
+
+        let str = "123";
+         console.log(typeof str);
+        let age = Number("숫자안되는123")
+         console.log(age); //NaN(숫자가 아님)
+         //숫자 변환시 특수한 경우 NULL => 0, TRUE => 1, FALSE => 0
+
+         //불린형으로 변환
+         console.log(Boolean(1)); //true
+         console.log(Boolean(0)); //false
+         console.log(Boolean("헬로")); //true
+         console.log(Boolean("")); //false
+
+         let x = 1;
+         x = -x;
+         alert(x);
+
+         let z = 1, y = 3;
+        alert(y - z);
+        console.log(typeof(alert));
+
+
+        
+        
+     
+
+    </script>
+</body>
+</html>

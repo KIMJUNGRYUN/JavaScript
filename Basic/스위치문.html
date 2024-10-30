@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //break가 없는 경우 그 아래 케이스 코드로 내려감.
+        // let a = 4;
+        // switch (a) {
+        // case 3:
+        //     alert( '비교하려는 값보다 작습니다.' );
+         
+        // case 4:
+        //     alert( '비교하려는 값과 일치합니다.' );
+            
+        // case 5:
+        //     alert( '비교하려는 값보다 큽니다.' );
+           
+        // default:
+        //     alert( "어떤 값인지 파악이 되지 않습니다." );
+        // }
+        switch (browser) {
+         case 'Edge':
+         alert( "Edge를 사용하고 계시네요!" );
+        break;
+
+        case 'Chrome':
+        case 'Firefox':
+        case 'Safari':
+        case 'Opera':
+            alert( '저희 서비스가 지원하는 브라우저를 사용하고 계시네요.' );
+            break;
+
+        default:
+            alert( '현재 페이지가 괜찮아 보이길 바랍니다!' );
+}
+    </script>
+    
+</body>
+</html>

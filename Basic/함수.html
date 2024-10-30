@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수와 스코프</title>
+</head>
+<body>
+    <script>
+        //함수
+        function add(x,y){
+            return x + y;
+        };
+        console.log(add(5, 3));
+
+        //스코프 전역 변수, 지역변수(함수 안에서만 사용)
+        let name = "홍길동";
+        let message = "안녕!";
+        function showMessage(){
+            console.log(message + name);
+        }
+        showMessage(message + name);
+
+        //함수 표현식(함수를 변수에 할당)
+        let sayHi = function (name) {
+            alert("헬로우!" + name);
+            return "굿바이!";
+        };
+        let func = sayHi; //함수의 복사
+
+        //콜백함수 함수를 값처럼 매개변수에 전달
+        function ask(question, showOk, showCancel){
+            if(confirm(question)) showOk()
+            else showCancel();
+        }
+        function showOk(){
+            alert("동의하셨습니다.");
+        }
+        function showCancel(){
+            alert("취소 버튼을 누르셨습니다.");
+        }
+        let okay = "동의하시겠습니까";
+        ask(okay, showOk, showCancel);
+        //변수중 var는 호이스팅, 재정의 되는데 이것은 변수의 좋지 않은 예
+        var ok = "동의하시겠습니까?";
+        var ok = "다시 정의";
+        //함수의 선언은 항상 호이스팅이 되므로 위치는 중요하지 않음
+    </script>
+
+    
+</body>
+</html>
