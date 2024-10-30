@@ -34,6 +34,7 @@
    let timerDisplay = document.querySelector('.timerDisplay');
    let timer = null;
 <hr>
+
 2. **멈춤 버튼 이벤트**
 ```
 document.getElementById('pauseTimer').addEventListener('click', () => {
