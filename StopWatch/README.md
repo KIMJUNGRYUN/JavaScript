@@ -41,3 +41,16 @@ document.getElementById('pauseTimer').addEventListener('click', () => {
 });
 ```
 - 멈춤 버튼: pauseTimer 버튼을 누르면 clearInterval 함수가 호출되어 timer 변수를 초기화하여 타이머가 일시 정지됩니다.
+
+3. **리셋 버튼 이벤트**
+```
+document.getElementById('resetTimer').addEventListener('click', () => {
+    clearInterval(timer);
+    [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    timerDisplay.textContent = `00 : 00 : 00 : 000`;
+});
+```
+### 리셋 버튼
+- resetTimer 버튼을 누르면 타이머를 초기화하고, [milliseconds, seconds, minutes, hours]를 모두 0으로 설정하여 시간을 리셋합니다.
+### 화면 업데이트
+- 초기화된 시간을 timerDisplay에 표시하여 화면에 "00 : 00 : 00 : 000"으로 업데이트합니다.
