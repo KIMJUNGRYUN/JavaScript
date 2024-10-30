@@ -33,3 +33,9 @@
    let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
    let timerDisplay = document.querySelector('.timerDisplay');
    let timer = null;
+   
+2. **멈춤 버튼 이벤트**
+```document.getElementById('pauseTimer').addEventListener('click', () => {
+    clearInterval(timer);
+});```
+- 멈춤 버튼: pauseTimer 버튼을 누르면 clearInterval 함수가 호출되어 timer 변수를 초기화하여 타이머가 일시 정지됩니다.
