@@ -48,7 +48,7 @@
        body.style.background = `linear-gradient(to left, ${color1.value} , ${color2.value})`;
        h3.textContent = body.style.background + ";";
    }
-중요 포인트:
+### 중요 포인트:
 - addEventListener("input", setColor): 사용자가 색상을 선택할 때마다 setColor 함수가 호출되도록 설정합니다. 콜백 함수는 함수명만 작성하며, 괄호 ()를 사용하지 않는 점을 유의합니다.
 - setColor 함수:
 선택한 두 색상을 사용하여 linear-gradient 스타일을 생성하고 body 배경에 적용합니다.
